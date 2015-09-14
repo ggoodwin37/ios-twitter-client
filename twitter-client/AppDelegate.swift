@@ -54,6 +54,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         print("Failed to get user")
                     }
                 )
+                TwitterClient.sharedInstance.GET("1.1/statuses/home_timeline.json", parameters: nil,
+                    success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                        print("Got home timeline: \(response)")
+                    }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                        print("Failed to get user")
+                    }
+                )
             },
             failure: { (error: NSError!) -> Void in
                 print("Failed to get access token")
