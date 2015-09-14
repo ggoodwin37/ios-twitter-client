@@ -58,6 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 TwitterClient.sharedInstance.GET("1.1/statuses/home_timeline.json", parameters: nil,
                     success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                         //print("Got home timeline: \(response)")
+                        let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
+                        for tweet in tweets {
+                            print("tweet text: \(tweet.text!), created: \(tweet.createdAt!)")
+                        }
                     }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                         print("Failed to get user")
                     }
