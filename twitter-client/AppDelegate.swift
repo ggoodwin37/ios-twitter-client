@@ -49,14 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
                 TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil,
                     success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-                        print("Got user: \(response)")
+                        let user = User(dictionary: response as! NSDictionary)
+                        print("Deserialized user name: \(user.name!)")
                     }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                         print("Failed to get user")
                     }
                 )
                 TwitterClient.sharedInstance.GET("1.1/statuses/home_timeline.json", parameters: nil,
                     success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-                        print("Got home timeline: \(response)")
+                        //print("Got home timeline: \(response)")
                     }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                         print("Failed to get user")
                     }
