@@ -18,6 +18,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func loginWithTwitterButtonPressed(sender: AnyObject) {
+        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
+        TwitterClient.sharedInstance.fetchRequestTokenWithPath("oauth/request_token", method: "GET",
+            callbackURL: NSURL(string:"cptwitterdemo://oauth"), scope: nil,
+            success: { (requestToken: BDBOAuth1Credential!) -> Void in
+                print("Got ze token")
+            },
+            failure: { (error: NSError!) -> Void in
+                print("Got FAIL")
+            }
+        )
+    }
 
 
 }
