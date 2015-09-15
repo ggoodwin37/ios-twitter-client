@@ -8,15 +8,23 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    var tweets: [Tweet]?
+
+    @IBOutlet weak var tweetsTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tweetsTableView.delegate = self
+        tweetsTableView.dataSource = self
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
             if (tweets != nil) {
                 for tweet in tweets! {
                     print("tweet text: \(tweet.text!), created: \(tweet.createdAt!)")
                 }
+                self.tweets = tweets
+                self.tweetsTableView.reloadData()
             }
         }
     )
@@ -31,14 +39,25 @@ class TweetsViewController: UIViewController {
         User.currentUser?.logout()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (tweets != nil) {
+            return tweets!.count
+        }
+        return 0
     }
-    */
 
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCellView", forIndexPath:indexPath) as! TweetCellView
+        let tweet = tweets![indexPath.row]
+        cell.authorLabel.text = tweet.author?.name
+        cell.tweetLabel.text = tweet.text
+        cell.dateLabel.text = tweet.createdAtString
+        if (tweet.profileImageUrl != nil) {
+            let profileImageUrl = NSURL(string: tweet.profileImageUrl!)
+            if (profileImageUrl != nil) {
+                cell.profileImageView.setImageWithURL(profileImageUrl)
+            }
+        }
+        return cell
+    }
 }
