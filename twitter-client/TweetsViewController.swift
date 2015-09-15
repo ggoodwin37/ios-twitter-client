@@ -55,6 +55,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             cell.dateLabel.text = dateFormatter.stringFromDate(tweet.createdAt!)
         }
         if (tweet.profileImageUrl != nil) {
+            print("attempting profile image with url \(tweet.profileImageUrl!)")
             let profileImageUrl = NSURL(string: tweet.profileImageUrl!)
             if (profileImageUrl != nil) {
                 cell.profileImageView.setImageWithURL(profileImageUrl)
