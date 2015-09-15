@@ -31,13 +31,23 @@
             </objects>
             <point key="canvasLocation" x="121.06666666666666" y="321.39333333333332"/>
         </scene>
-        <!--View Controller-->
+        <!--Tweets View Controller-->
         <scene sceneID="MzR-y6-oTd">
             <objects>
-                <viewController storyboardIdentifier="TweetsViewController" id="XIL-4g-hHq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetsViewController" id="XIL-4g-hHq" customClass="TweetsViewController" customModule="twitter_client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5db-CM-sJm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hjM-QE-Ody">
+                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="XIL-4g-hHq" eventType="touchUpInside" id="ZbZ-oz-asw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

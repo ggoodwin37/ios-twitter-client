@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
         if (User.currentUser != nil) {
             // force it to go to logged in screen
             let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
@@ -49,5 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return TwitterClient.sharedInstance.openURL(url)
     }
 
+    func userDidLogout() {
+        let vc = storyboard.instantiateInitialViewController()
+        window?.rootViewController = vc
+    }
 }
 
