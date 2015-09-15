@@ -11,6 +11,7 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var tweets: [Tweet]?
+    var refreshControl: UIRefreshControl!
 
     @IBOutlet weak var tweetsTableView: UITableView!
 
@@ -18,20 +19,27 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         tweetsTableView.delegate = self
         tweetsTableView.dataSource = self
-        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
-            if (tweets != nil) {
-                self.tweets = tweets
-                self.tweetsTableView.reloadData()
-            }
-        }
-    )
+        self.refreshControl = UIRefreshControl()
+        tweetsTableView.insertSubview(self.refreshControl, atIndex: 0)
+        self.refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        loadTweets()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    func loadTweets() {
+        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
+            self.refreshControl!.endRefreshing()
+            if (tweets != nil) {
+                self.tweets = tweets
+                self.tweetsTableView.reloadData()
+            }
+        })
+    }
+
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
     }
@@ -55,12 +63,17 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             cell.dateLabel.text = dateFormatter.stringFromDate(tweet.createdAt!)
         }
         if (tweet.profileImageUrl != nil) {
-            print("attempting profile image with url \(tweet.profileImageUrl!)")
             let profileImageUrl = NSURL(string: tweet.profileImageUrl!)
             if (profileImageUrl != nil) {
                 cell.profileImageView.setImageWithURL(profileImageUrl)
             }
         }
         return cell
+    }
+
+    func onRefresh() {
+        if (self.refreshControl != nil) {
+            loadTweets()
+        }
     }
 }
