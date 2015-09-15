@@ -24,7 +24,9 @@ class ComposeViewController: UIViewController {
     
 
     @IBAction func onTweetIt(sender: AnyObject) {
-        print("Tweeting the following: \(tweetTextView.text)")
+        TwitterClient.sharedInstance.postTweet(tweetTextView.text, completion: { (error: NSError?) -> Void in
+            self.dismissViewControllerAnimated(true, completion: {});
+        })
     }
     /*
     // MARK: - Navigation
