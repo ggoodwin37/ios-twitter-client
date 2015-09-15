@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        if (User.currentUser != nil) {
+            // force it to go to logged in screen
+            print("initialized with current user \(User.currentUser!.name!)")
+        }
         return true
     }
 
