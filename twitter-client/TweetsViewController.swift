@@ -12,8 +12,14 @@ class TweetsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
+            if (tweets != nil) {
+                for tweet in tweets! {
+                    print("tweet text: \(tweet.text!), created: \(tweet.createdAt!)")
+                }
+            }
+        }
+    )
     }
 
     override func didReceiveMemoryWarning() {
