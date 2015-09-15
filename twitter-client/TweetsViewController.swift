@@ -20,9 +20,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tweetsTableView.dataSource = self
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
             if (tweets != nil) {
-                for tweet in tweets! {
-                    print("tweet text: \(tweet.text!), created: \(tweet.createdAt!)")
-                }
                 self.tweets = tweets
                 self.tweetsTableView.reloadData()
             }
@@ -51,7 +48,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let tweet = tweets![indexPath.row]
         cell.authorLabel.text = tweet.author?.name
         cell.tweetLabel.text = tweet.text
-        cell.dateLabel.text = tweet.createdAtString
+        if (tweet.createdAt != nil) {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+            dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+            cell.dateLabel.text = dateFormatter.stringFromDate(tweet.createdAt!)
+        }
         if (tweet.profileImageUrl != nil) {
             let profileImageUrl = NSURL(string: tweet.profileImageUrl!)
             if (profileImageUrl != nil) {

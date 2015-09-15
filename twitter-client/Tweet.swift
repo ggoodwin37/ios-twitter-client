@@ -22,7 +22,7 @@ class Tweet: NSObject {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
         createdAt = formatter.dateFromString(createdAtString!)
-        profileImageUrl = "TODO"
+        profileImageUrl = dictionary.valueForKeyPath("user.profile_image_url") as? String
     }
 
     class func tweetsWithArray(array: [NSDictionary]) -> [Tweet] {
