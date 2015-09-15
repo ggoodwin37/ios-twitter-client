@@ -76,4 +76,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             loadTweets()
         }
     }
+
+    @IBAction func onCompose(sender: AnyObject) {
+        self.performSegueWithIdentifier("ComposeTweetSegue", sender: self)
+    }
 }

@@ -56,7 +56,6 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                     success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                         let user = User(dictionary: response as! NSDictionary)
                         User.currentUser = user
-                        print("Deserialized user name: \(user.name!)")
                         self.loginCompletion?(user: user, error: nil)
                     }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                         print("Failed to get user")
