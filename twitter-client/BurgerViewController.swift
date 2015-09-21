@@ -11,6 +11,9 @@ import UIKit
 class BurgerViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentViewLeftMarginConstraint: NSLayoutConstraint!
+
+    var originalLeftMargin: CGFloat!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,18 @@ class BurgerViewController: UIViewController {
     }
     
 
+    @IBAction func onPanActionGesture(sender: UIPanGestureRecognizer) {
+        //contentViewLeftMarginConstraint
+        let translation = sender.translationInView(view)
+        let velocity = sender.velocityInView(view)
+        if (sender.state == UIGestureRecognizerState.Began) {
+            originalLeftMargin = contentViewLeftMarginConstraint.constant
+        } else if (sender.state == UIGestureRecognizerState.Changed) {
+            contentViewLeftMarginConstraint.constant = originalLeftMargin + translation.x
+        } else if (sender.state == UIGestureRecognizerState.Ended) {
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

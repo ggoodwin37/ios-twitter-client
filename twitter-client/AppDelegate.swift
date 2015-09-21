@@ -18,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
         if (User.currentUser != nil) {
             // force it to go to logged in screen
-            let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
-            window?.rootViewController = vc
+            // TODO: revisit this once done hacking on burgerMenu.
+            //let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
+            //window?.rootViewController = vc
         }
         return true
     }
