@@ -23,6 +23,10 @@ class BurgerViewController: UIViewController {
         didSet {
             view.layoutIfNeeded()
             contentView.addSubview(contentViewController.view)
+            UIView.animateWithDuration(0.1, animations: {
+                self.contentViewLeftMarginConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            })
         }
     }
 
