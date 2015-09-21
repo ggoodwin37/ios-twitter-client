@@ -34,13 +34,16 @@ class BurgerViewController: UIViewController {
         if (sender.state == UIGestureRecognizerState.Began) {
             originalLeftMargin = contentViewLeftMarginConstraint.constant
         } else if (sender.state == UIGestureRecognizerState.Changed) {
-            contentViewLeftMarginConstraint.constant = originalLeftMargin + translation.x
+            contentViewLeftMarginConstraint.constant = originalLeftMargin + max(0, translation.x)
         } else if (sender.state == UIGestureRecognizerState.Ended) {
-            if (velocity.x > 0) {
-                contentViewLeftMarginConstraint.constant = view.frame.size.width - 50
-            } else {
-                contentViewLeftMarginConstraint.constant = 0
-            }
+            UIView.animateWithDuration(0.1, animations: {
+                if (velocity.x > 0) {
+                    self.contentViewLeftMarginConstraint.constant = self.view.frame.size.width - 32
+                } else {
+                    self.contentViewLeftMarginConstraint.constant = 0
+                }
+                self.view.layoutIfNeeded()
+            })
         }
         
     }
