@@ -19,6 +19,13 @@ class BurgerViewController: UIViewController {
             menuView.addSubview(menuViewController.view)
         }
     }
+    var contentViewController: UIViewController! {
+        didSet {
+            view.layoutIfNeeded()
+            contentView.addSubview(contentViewController.view)
+        }
+    }
+
     var originalLeftMargin: CGFloat!
 
     override func viewDidLoad() {

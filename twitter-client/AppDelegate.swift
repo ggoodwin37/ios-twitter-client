@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let burgerController = window!.rootViewController as! BurgerViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController")
+        let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
         burgerController.menuViewController = menuViewController
-
+        menuViewController.burgerVC = burgerController
 
         // TODO: figure out what to do here considering burger controller
 //        // if we have a currentUser, can bypass the login screen.

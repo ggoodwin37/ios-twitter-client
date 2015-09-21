@@ -10,6 +10,7 @@
 		F302B7781BB0ACEF00CBA34C /* BurgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B7771BB0ACEF00CBA34C /* BurgerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F302B77A1BB0B81700CBA34C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B7791BB0B81700CBA34C /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F302B77C1BB0B95E00CBA34C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B77B1BB0B95E00CBA34C /* MenuCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F302B77E1BB0BE5500CBA34C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B77D1BB0BE5500CBA34C /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F320D2941BA39EE500A0C16E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F320D2931BA39EE500A0C16E /* AppDelegate.swift */; };
 		F320D2961BA39EE500A0C16E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F320D2951BA39EE500A0C16E /* ViewController.swift */; };
 		F320D2991BA39EE500A0C16E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F320D2971BA39EE500A0C16E /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		F302B7771BB0ACEF00CBA34C /* BurgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BurgerViewController.swift; sourceTree = "<group>"; };
 		F302B7791BB0B81700CBA34C /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F302B77B1BB0B95E00CBA34C /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		F302B77D1BB0BE5500CBA34C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F320D2901BA39EE500A0C16E /* twitter-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "twitter-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F320D2931BA39EE500A0C16E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F320D2951BA39EE500A0C16E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				F302B7771BB0ACEF00CBA34C /* BurgerViewController.swift */,
 				F302B7791BB0B81700CBA34C /* MenuViewController.swift */,
 				F302B77B1BB0B95E00CBA34C /* MenuCell.swift */,
+				F302B77D1BB0BE5500CBA34C /* ProfileViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				F302B7781BB0ACEF00CBA34C /* BurgerViewController.swift in Sources */,
 				F3C1BB7A1BA7A3EE00A91C38 /* TweetsViewController.swift in Sources */,
 				F302B77C1BB0B95E00CBA34C /* MenuCell.swift in Sources */,
+				F302B77E1BB0BE5500CBA34C /* ProfileViewController.swift in Sources */,
 				F373810E1BA7BE8300799A78 /* ComposeViewController.swift in Sources */,
 				F320D2961BA39EE500A0C16E /* ViewController.swift in Sources */,
 				F3C1BB7C1BA7AFE900A91C38 /* TweetCellView.swift in Sources */,

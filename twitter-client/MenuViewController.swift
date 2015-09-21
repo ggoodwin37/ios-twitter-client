@@ -12,10 +12,25 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var menuTableView: UITableView!
 
-    let menuItems = ["One", "Two"]
+    private var profileVC: ProfileViewController!
+    private var tweetsVC: TweetsViewController!
+    private var vcList: [UIViewController]!
+
+    // TODO: less tightly coupled
+    var burgerVC: BurgerViewController!
+
+    let menuItems = ["Profile", "Tweets"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        profileVC = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+        tweetsVC = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as! TweetsViewController
+
+        vcList = [UIViewController]()
+        vcList.append(profileVC)
+        vcList.append(tweetsVC)
 
         menuTableView.delegate = self
         menuTableView.dataSource = self
@@ -36,4 +51,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        burgerVC.contentViewController = vcList[indexPath.row]
+    }
 }
