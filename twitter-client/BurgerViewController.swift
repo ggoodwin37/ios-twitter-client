@@ -13,6 +13,12 @@ class BurgerViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentViewLeftMarginConstraint: NSLayoutConstraint!
 
+    var menuViewController: UIViewController! {
+        didSet {
+            view.layoutIfNeeded()
+            menuView.addSubview(menuViewController.view)
+        }
+    }
     var originalLeftMargin: CGFloat!
 
     override func viewDidLoad() {

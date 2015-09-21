@@ -17,13 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
 
-        //let burgerController = window!.rootViewController as! BurgerViewController
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController")
-        //burgerController.menuViewController = menuViewController
+        let burgerController = window!.rootViewController as! BurgerViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController")
+        burgerController.menuViewController = menuViewController
 
 
-        // video at 14:39
         // TODO: figure out what to do here considering burger controller
 //        // if we have a currentUser, can bypass the login screen.
 //        if (User.currentUser != nil) {

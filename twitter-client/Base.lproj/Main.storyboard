@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2bC-7v-YOI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mup-cR-KxF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -269,7 +269,7 @@
         <!--Menu View Controller-->
         <scene sceneID="Goy-DV-tAS">
             <objects>
-                <viewController id="2bC-7v-YOI" customClass="MenuViewController" customModule="twitter_client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2bC-7v-YOI" customClass="MenuViewController" customModule="twitter_client" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z1A-6a-WRt"/>
                         <viewControllerLayoutGuide type="bottom" id="evT-ge-ABX"/>
