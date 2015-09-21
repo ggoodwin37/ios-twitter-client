@@ -51,14 +51,14 @@
                                 <rect key="frame" x="-4" y="0.0" width="328" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCellView" rowHeight="146" id="VMu-my-Bfr" customClass="TweetCellView" customModule="twitter_client" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCellView" id="VMu-my-Bfr" customClass="TweetCellView" customModule="twitter_client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="328" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VMu-my-Bfr" id="S1Z-oK-1kn">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="145.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AV7-mH-ihg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AV7-mH-ihg">
                                                     <rect key="frame" x="71" y="8" width="249" height="100.5"/>
                                                     <color key="backgroundColor" red="0.24089464303137575" green="1" blue="0.18825959651720914" alpha="1" colorSpace="calibratedRGB"/>
                                                     <string key="text">Cardigan deep v flexitarian +1 Thundercats. Tofu 8-bit cold-pressed Pitchfork meggings normcore. Crucifix heirloom Blue Bottle sartorial sustainable mumblecore. Salvia Helvetica gastropub hashtag.</string>
@@ -66,8 +66,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SuperAwesomeTwitterGuy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRc-5X-3w3">
-                                                    <rect key="frame" x="8" y="116" width="158.5" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="SuperAwesomeTwitterGuy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRc-5X-3w3">
+                                                    <rect key="frame" x="8" y="116" width="158.5" height="21.5"/>
                                                     <color key="backgroundColor" red="0.22183004785238314" green="1" blue="0.24288176250803706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -94,6 +94,7 @@
                                                 <constraint firstItem="AV7-mH-ihg" firstAttribute="trailing" secondItem="S1Z-oK-1kn" secondAttribute="trailingMargin" id="4dl-Oi-951"/>
                                                 <constraint firstItem="uvC-HR-f9a" firstAttribute="top" secondItem="AV7-mH-ihg" secondAttribute="bottom" constant="9.5" id="FVM-kF-ZY7"/>
                                                 <constraint firstItem="JJJ-lf-0oO" firstAttribute="leading" secondItem="S1Z-oK-1kn" secondAttribute="leadingMargin" id="GmC-oL-C0K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="aRc-5X-3w3" secondAttribute="bottom" id="Hih-R9-HFJ"/>
                                                 <constraint firstItem="aRc-5X-3w3" firstAttribute="leading" secondItem="S1Z-oK-1kn" secondAttribute="leadingMargin" id="JUm-7b-kle"/>
                                                 <constraint firstItem="JJJ-lf-0oO" firstAttribute="top" secondItem="S1Z-oK-1kn" secondAttribute="topMargin" id="Rh4-s3-9Xs"/>
                                                 <constraint firstItem="aRc-5X-3w3" firstAttribute="top" secondItem="AV7-mH-ihg" secondAttribute="bottom" constant="7.5" id="gqX-7G-h7e"/>

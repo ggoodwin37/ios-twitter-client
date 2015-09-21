@@ -20,7 +20,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tweetsTableView.delegate = self
         tweetsTableView.dataSource = self
         tweetsTableView.estimatedRowHeight = 120;
-        //tweetsTableView.rowHeight = UITableViewAutomaticDimension
+        tweetsTableView.rowHeight = UITableViewAutomaticDimension
 
         self.refreshControl = UIRefreshControl()
         tweetsTableView.insertSubview(self.refreshControl, atIndex: 0)
