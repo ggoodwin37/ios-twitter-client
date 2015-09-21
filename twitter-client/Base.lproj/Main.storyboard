@@ -93,28 +93,34 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGk-GA-9p7" userLabel="ActionBGView">
                                 <rect key="frame" x="-4" y="523" width="328" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nS-eJ-for">
-                                        <rect key="frame" x="4" y="-523" width="66" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nS-eJ-for">
+                                        <rect key="frame" x="32" y="8" width="66" height="30"/>
                                         <state key="normal" title="Compose"/>
                                         <connections>
                                             <action selector="onCompose:" destination="XIL-4g-hHq" eventType="touchUpInside" id="tIN-bA-4uB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjM-QE-Ody">
-                                        <rect key="frame" x="4" y="-523" width="48" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjM-QE-Ody">
+                                        <rect key="frame" x="248" y="8" width="48" height="30"/>
                                         <state key="normal" title="Logout"/>
                                         <connections>
                                             <action selector="onLogout:" destination="XIL-4g-hHq" eventType="touchUpInside" id="ZbZ-oz-asw"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.16076558232304194" green="1" blue="0.16876441785098761" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9nS-eJ-for" secondAttribute="bottom" constant="7" id="4Uj-j3-S4k"/>
+                                    <constraint firstAttribute="trailing" secondItem="hjM-QE-Ody" secondAttribute="trailing" constant="32" id="7E7-HX-A4i"/>
+                                    <constraint firstItem="hjM-QE-Ody" firstAttribute="top" secondItem="qGk-GA-9p7" secondAttribute="top" constant="8" id="8tK-L2-RvW"/>
+                                    <constraint firstItem="9nS-eJ-for" firstAttribute="top" secondItem="qGk-GA-9p7" secondAttribute="top" constant="8" id="H8S-SP-Xd3"/>
+                                    <constraint firstItem="9nS-eJ-for" firstAttribute="leading" secondItem="qGk-GA-9p7" secondAttribute="leading" constant="32" id="U5v-JI-V4d"/>
+                                    <constraint firstAttribute="bottom" secondItem="hjM-QE-Ody" secondAttribute="bottom" constant="7" id="j6r-94-nYI"/>
                                     <constraint firstAttribute="height" constant="45" id="sFB-te-nyE"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.98894746776542064" green="0.06376347186237119" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="unt-nK-9y2" firstAttribute="top" secondItem="qGk-GA-9p7" secondAttribute="bottom" id="2cN-w0-N4R"/>
                             <constraint firstItem="qGk-GA-9p7" firstAttribute="top" secondItem="oOP-NR-El3" secondAttribute="bottom" id="4Aq-fC-mrV"/>
