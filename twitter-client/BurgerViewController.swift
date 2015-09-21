@@ -36,6 +36,11 @@ class BurgerViewController: UIViewController {
         } else if (sender.state == UIGestureRecognizerState.Changed) {
             contentViewLeftMarginConstraint.constant = originalLeftMargin + translation.x
         } else if (sender.state == UIGestureRecognizerState.Ended) {
+            if (velocity.x > 0) {
+                contentViewLeftMarginConstraint.constant = view.frame.size.width - 50
+            } else {
+                contentViewLeftMarginConstraint.constant = 0
+            }
         }
         
     }
