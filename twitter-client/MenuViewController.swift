@@ -26,6 +26,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         profileVC = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+        profileVC.user = User.currentUser
         tweetsVC = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as! TweetsViewController
 
         vcList = [UIViewController]()

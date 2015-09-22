@@ -10,9 +10,27 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var handleLabel: UILabel!
+    @IBOutlet weak var tweetsLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+
+    var user: User?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let user = user {
+            let profileImageUrl = NSURL(string: user.profileImageUrl!)
+            profileImageView.setImageWithURL(profileImageUrl)
+            fullNameLabel.text = user.name
+            handleLabel.text = "@\(user.screenname!)"
+            tweetsLabel.text = "\(user.tweets!)"
+            followingLabel.text = "\(user.following!)"
+            followersLabel.text = "\(user.followers!)"
+        }
         // Do any additional setup after loading the view.
     }
 
