@@ -12,8 +12,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var menuTableView: UITableView!
 
-    private var profileVC: ProfileViewController!
-    private var tweetsVC: TweetsViewController!
+    var profileVC: ProfileViewController!
+    var tweetsVC: TweetsViewController!
     private var vcList: [UIViewController]!
 
     // TODO: less tightly coupled
